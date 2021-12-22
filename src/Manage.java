@@ -50,19 +50,53 @@ public class Manage {
         System.out.println("nhập tên");
         String name = scanner.nextLine();
         scanner.nextLine();
-        System.out.println();
+        System.out.println("nhập tuổi");
+        int age = scanner.nextInt();
+        System.out.println("nhập giới tính");
+        String gender = scanner.nextLine();
+        scanner.nextLine();
+        System.out.print("Enter Address: ");
+        String address = scanner.nextLine();
+        scanner.nextLine();
+        Human human = new Human(name, age, gender, address);
+        humans.add(human);
 
     }
 
     public static void deleteByName() {
+        System.out.println("Nhập tên bạn muốn xóa: ");
+        String name = scanner.nextLine();
+        scanner.nextLine();
+        for (int i = 0; i < humans.size(); i++) {
+            if (humans.get(i).getName().equals(name)) {
+                humans.remove(humans.get(i));
+            }
+        }
 
     }
 
     public static void editByName() {
+        System.out.println("Nhập tên bạn muốn sửa: ");
+        String name = scanner.nextLine();
+        scanner.nextLine();
+        for (int i = 0; i < humans.size(); i++) {
+            if (humans.get(i).getName().equals(name)) {
+                humans.remove(humans.get(i));
+            }
+        }
 
     }
 
     public static void searchByName() {
+        System.out.println("nhập tên bạn muốn tìm");
+        String name = scanner.nextLine();
+        scanner.nextLine();
+        for (int i = 0; i < humans.size(); i++) {
+            if (humans.get(i).getName().equals(name)) {
+                System.out.println(humans.get(i));
+            }
+        }
+    }
 
     }
-}
+
